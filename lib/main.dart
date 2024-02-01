@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:islame_project/home/home_screen.dart';
+import 'package:islame_project/my_theme.dart';
 
 void main() {
   runApp(Myapp());
@@ -16,6 +17,7 @@ class Myapp extends StatelessWidget {
       routes: {
         Home_Screen.routeName: (context) => Home_Screen(),
       },
+      theme: myTheme.lightMode,
     );
   }
 }
