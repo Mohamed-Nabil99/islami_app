@@ -31,7 +31,7 @@ class _Home_ScreenState extends State<Home_Screen> {
                 Text('Islame', style: Theme.of(context).textTheme.titleLarge),
           ),
           bottomNavigationBar: Theme(
-            data: Theme.of(context).copyWith(canvasColor: myTheme.primaryLight),
+            data: Theme.of(context).copyWith(canvasColor: MyTheme.primaryLight),
             child: BottomNavigationBar(
               currentIndex: selectedIndex,
               onTap: (index) {
@@ -61,5 +61,5 @@ class _Home_ScreenState extends State<Home_Screen> {
     );
   }
 
-  List<Widget> tabs = [QuranTab(), HadethTab(), RadioTab(), SebhaTab()];
+  List<Widget> tabs = [RadioTab(), SebhaTab(), HadethTab(), QuranTab()];
 }
