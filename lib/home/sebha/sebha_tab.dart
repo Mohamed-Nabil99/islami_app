@@ -25,10 +25,10 @@ class _SebhaTabState extends State<SebhaTab> {
       child: Column(
         children: [
           Row(
-            mainAxisAlignment: MainAxisAlignment.end,
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Padding(
-                padding: EdgeInsets.only(right: 100),
+                padding: EdgeInsets.all(5),
                 child: Image.asset('assets/images/head_sebha_logo.png'),
               ),
             ],
