@@ -5,5 +5,14 @@
 "quran" : "Quran",
 "hadeth" : "Hadeth",
 "sebha" : "Sebha",
-"radio" : "Radio"
+"radio" : "Radio",
+"settings" : "Settings",
+"language" : "Language",
+"english" : "English",
+"arabic" : "Arabic",
+"number_of_praises" : "Number of praises",
+"quran_radio" : "Quran Radio",
+"theme" : "Theme",
+"light" : "Light",
+"dark" : "Dark"
 }

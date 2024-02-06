@@ -5,5 +5,14 @@
 "quran" : "القرآن",
 "hadeth" : "الحديث",
 "sebha" : "السبحه",
-"radio" : "ألاذاعه "
+"radio" : "ألاذاعه ",
+"settings" : "ألاعدادات",
+"language" : "اللغه",
+"english" : "ألانجليزيه",
+"arabic" : "العربيه",
+"number_of_praises" : "عدد التسبيحات",
+"quran_radio" : "أذاعه القرآن الكريم",
+"theme" : "النمط",
+"light" : "مضئ",
+"dark" : "ليلي"
 }

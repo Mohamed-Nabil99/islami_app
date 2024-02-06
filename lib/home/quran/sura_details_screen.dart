@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:islame_project/home/quran/item_sura_details_screen.dart';
 import 'package:islame_project/my_theme.dart';
+import 'package:islame_project/providers/app_config_provider.dart';
+import 'package:provider/provider.dart';
 
 class SuraDetailsScreen extends StatefulWidget {
   static const routeName = 'sura_details_screen';
@@ -15,17 +17,25 @@ class _SuraDetailsScreenState extends State<SuraDetailsScreen> {
 
   @override
   Widget build(BuildContext context) {
+    var provider = Provider.of<AppConfigProvider>(context);
     var args = ModalRoute.of(context)?.settings.arguments as SuraDetailsArgs;
     if (verses.isEmpty) {
       loadFile(args.index);
     }
     return Stack(children: [
-      Image.asset(
-        'assets/images/default_bg.png',
-        width: double.infinity,
-        height: double.infinity,
-        fit: BoxFit.fill,
-      ),
+      provider.isDarkMode()
+          ? Image.asset(
+              'assets/images/dark_bg.png',
+              width: double.infinity,
+              height: double.infinity,
+              fit: BoxFit.fill,
+            )
+          : Image.asset(
+              'assets/images/default_bg.png',
+              width: double.infinity,
+              height: double.infinity,
+              fit: BoxFit.fill,
+            ),
       Scaffold(
         appBar: AppBar(
           title: Text('${args.name}',
@@ -33,18 +43,25 @@ class _SuraDetailsScreenState extends State<SuraDetailsScreen> {
         ),
         body: verses.isEmpty
             ? Center(
-                child: CircularProgressIndicator(
-                color: MyTheme.primaryLight,
-              ))
+            child: CircularProgressIndicator(
+              color: MyTheme.primaryLight,
+            ))
             : Container(
-                margin: EdgeInsets.symmetric(
+          margin: EdgeInsets.symmetric(
                   vertical: MediaQuery.of(context).size.height * 0.06,
                   horizontal: MediaQuery.of(context).size.height * 0.05,
                 ),
                 decoration: BoxDecoration(
-                    color: MyTheme.WhiteColor,
+                    color: provider.isDarkMode()
+                        ? MyTheme.primarydark
+                        : MyTheme.WhiteColor,
                     borderRadius: BorderRadius.circular(25),
-                    boxShadow: [BoxShadow(color: Colors.white)]),
+                    boxShadow: [
+                      BoxShadow(
+                          color: provider.isDarkMode()
+                              ? MyTheme.primarydark
+                              : Colors.white)
+                    ]),
                 child: ListView.builder(
                   itemBuilder: (context, index) {
                     return ItemSuraDetailsScreen(
