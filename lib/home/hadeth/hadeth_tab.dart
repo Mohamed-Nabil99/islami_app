@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:islame_project/home/hadeth/item_hadeth_name.dart';
+import 'package:islame_project/providers/app_config_provider.dart';
+import 'package:provider/provider.dart';
 
 import '../../my_theme.dart';
 
@@ -17,20 +20,26 @@ class _HadethTabState extends State<HadethTab> {
     if (ahadethList.isEmpty) {
       loadFile();
     }
+    var provider = Provider.of<AppConfigProvider>(context);
+
     return Column(
       children: [
         Center(child: Image.asset('assets/images/hadeth_logo.png')),
         Divider(
-          color: MyTheme.primaryLight,
-          thickness: 3,
+          color: provider.isDarkMode()
+              ? MyTheme.yallowColor
+              : MyTheme.primaryLight,
+          thickness: 5,
         ),
         Text(
-          'Hadeth Name',
+          AppLocalizations.of(context)!.hadeth_name,
           style: Theme.of(context).textTheme.titleMedium,
         ),
         Divider(
-          color: MyTheme.primaryLight,
-          thickness: 3,
+          color: provider.isDarkMode()
+              ? MyTheme.yallowColor
+              : MyTheme.primaryLight,
+          thickness: 5,
         ),
         ahadethList.isEmpty
             ? Center(
@@ -42,7 +51,9 @@ class _HadethTabState extends State<HadethTab> {
                 child: ListView.separated(
                   separatorBuilder: (context, index) {
                     return Divider(
-                      color: MyTheme.primaryLight,
+                      color: provider.isDarkMode()
+                          ? MyTheme.yallowColor
+                          : MyTheme.primaryLight,
                       thickness: 2,
                     );
                   },
