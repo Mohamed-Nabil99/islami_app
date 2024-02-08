@@ -12,11 +12,11 @@ class RadioTab extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         Container(
-          padding: EdgeInsets.only(bottom: 20), // Adjust padding as needed
+          padding: EdgeInsets.only(bottom: 20),
           child: Column(
             children: [
-              Image.asset('assets/images/radio_image.png'), // Radio image
-              SizedBox(height: 10), // Add space between image and text
+              Image.asset('assets/images/radio_image.png'),
+              SizedBox(height: 10),
               Text(
                 AppLocalizations.of(context)!.quran_radio,
                 style: Theme.of(context).textTheme.titleSmall,
@@ -32,30 +32,24 @@ class RadioTab extends StatelessWidget {
                   ? MyTheme.yallowColor
                   : MyTheme.primaryLight,
               iconSize: 50,
-              icon: Icon(Icons.skip_previous), // Back icon
-              onPressed: () {
-                // Add your onPressed logic here
-              },
+              icon: Icon(Icons.skip_previous),
+              onPressed: () {},
             ),
             IconButton(
               color: provider.isDarkMode()
                   ? MyTheme.yallowColor
                   : MyTheme.primaryLight,
               iconSize: 50,
-              icon: Icon(Icons.play_arrow), // Play icon
-              onPressed: () {
-                // Add your onPressed logic here
-              },
+              icon: Icon(Icons.play_arrow),
+              onPressed: () {},
             ),
             IconButton(
               color: provider.isDarkMode()
                   ? MyTheme.yallowColor
                   : MyTheme.primaryLight,
               iconSize: 50,
-              icon: Icon(Icons.skip_next), // Play next icon
-              onPressed: () {
-                // Add your onPressed logic here
-              },
+              icon: Icon(Icons.skip_next),
+              onPressed: () {},
             ),
           ],
         ),

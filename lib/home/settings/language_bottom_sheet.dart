@@ -15,7 +15,6 @@ class _LanguageBottomSheetState extends State<LanguageBottomSheet> {
     var provider = Provider.of<AppConfigProvider>(context);
     return Container(
       color: provider.isDarkMode() ? MyTheme.primaryLight : MyTheme.WhiteColor,
-      // margin: EdgeInsets.all(15),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
