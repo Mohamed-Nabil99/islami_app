@@ -60,7 +60,7 @@ class _SuraDetailsScreenState extends State<SuraDetailsScreen> {
                       BoxShadow(
                           color: provider.isDarkMode()
                               ? MyTheme.primarydark
-                              : Colors.white)
+                              : MyTheme.WhiteColor)
                     ]),
                 child: ListView.builder(
                   itemBuilder: (context, index) {
